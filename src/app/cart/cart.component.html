@@ -1,0 +1,36 @@
+<h2>Cart</h2>
+
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{item.name}}</span>
+  <span>{{item.price | currency}}</span>
+  <button (click)="clearCart()" >remove</button>
+</div>
+ 
+
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="name" >
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name" placeholder="Enter Name" >
+    </div>
+     
+     <div>
+      <label for="Address" >
+        Address
+      </label>
+      <input id="address" type="text" formControlName="Address" placeholder="Enter Your address" >
+    </div>
+
+    
+    
+    <button class="button"  type="submit" >Purchase</button>
+
+  </form>
+
